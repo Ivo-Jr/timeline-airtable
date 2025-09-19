@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import assignLanes from '../../utils/assignLanes.js';
 import { calculateTimelineMetrics } from '../../utils/timelineUtils.js';
 import TimeScale from './TimeScale.js';
@@ -6,7 +6,17 @@ import Lane from './Lane.js';
 import TimelineStats from './TimelineStats.js';
 import { STYLES } from '../../utils/constants.js';
 
-export default function Timeline({ items }) {
+export default function Timeline({ items: initialItems }) {
+  const [items, setItems] = useState(initialItems);
+  
+  const handleUpdateItem = (itemId, updatedItem) => {
+    setItems(prevItems => 
+      prevItems.map(item => 
+        item.id === itemId ? updatedItem : item
+      )
+    );
+  };
+
   const lanes = assignLanes(items);
   const { minDate, maxDate, totalDays } = calculateTimelineMetrics(items);
   
@@ -37,6 +47,7 @@ export default function Timeline({ items }) {
               minDate={minDate}
               totalDays={totalDays}
               isLastLane={laneIndex === lanes.length - 1}
+              onUpdateItem={handleUpdateItem}
             />
           ))}
         </div>

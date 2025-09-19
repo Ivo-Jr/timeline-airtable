@@ -29,6 +29,13 @@ export default function TimelineStats({ lanes, items, minDate, maxDate }) {
           {formatDate(maxDate.toISOString().split('T')[0])}
         </strong>
       </div>
+      <div style={{ 
+        fontSize: '12px', 
+        color: '#9CA3AF',
+        fontStyle: 'italic'
+      }}>
+        💡 Duplo clique nos itens para editar
+      </div>
     </div>
   );
 }

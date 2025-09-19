@@ -2,7 +2,7 @@ import React from 'react';
 import TimelineItem from './TimelineItem.js';
 import { TIMELINE_CONFIG, STYLES } from '../../utils/constants.js';
 
-export default function Lane({ items, laneIndex, minDate, totalDays, isLastLane }) {
+export default function Lane({ items, laneIndex, minDate, totalDays, isLastLane, onUpdateItem }) {
   return (
     <div 
       style={{
@@ -19,6 +19,7 @@ export default function Lane({ items, laneIndex, minDate, totalDays, isLastLane 
           minDate={minDate}
           totalDays={totalDays}
           laneIndex={laneIndex}
+          onUpdateItem={onUpdateItem}
         />
       ))}
     </div>
