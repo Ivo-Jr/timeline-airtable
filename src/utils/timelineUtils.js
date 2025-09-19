@@ -62,7 +62,7 @@ export function generateScaleMarkers(minDate, totalDays, interval) {
       key: i,
       date,
       left,
-      label: date.toLocaleDateString('pt-BR', { month: 'short', day: 'numeric' })
+      label: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
     });
   }
   

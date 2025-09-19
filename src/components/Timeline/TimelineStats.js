@@ -17,10 +17,10 @@ export default function TimelineStats({ lanes, items, minDate, maxDate }) {
       alignItems: 'center'
     }}>
       <div>
-        <strong style={{ color: '#1F2937' }}>{lanes.length}</strong> lanes organizadas
+        <strong style={{ color: '#1F2937' }}>{lanes.length}</strong> organized lanes
       </div>
       <div>
-        <strong style={{ color: '#1F2937' }}>{items.length}</strong> itens
+        <strong style={{ color: '#1F2937' }}>{items.length}</strong> items
       </div>
       <div>
         Period: <strong style={{ color: '#1F2937' }}>
