@@ -1,0 +1,26 @@
+export const LANE_COLORS = [
+  '#3B82F6',
+  '#EF4444',
+  '#10B981',
+  '#F59E0B',
+  '#8B5CF6',
+  '#EC4899',
+  '#06B6D4',
+  '#84CC16' 
+];
+
+export const TIMELINE_CONFIG = {
+  ITEM_HEIGHT: 30,
+  LANE_HEIGHT: 50,
+  LANE_MARGIN: 10,
+  MIN_ITEM_WIDTH_PERCENT: 2,
+  SCALE_INTERVAL_DAYS: 7
+};
+
+export const STYLES = {
+  BORDER_RADIUS: '4px',
+  BOX_SHADOW: '0 2px 4px rgba(0,0,0,0.1)',
+  BORDER_COLOR: '#E5E7EB',
+  BACKGROUND_COLOR: '#F9FAFB',
+  TEXT_COLOR: '#6B7280'
+};
