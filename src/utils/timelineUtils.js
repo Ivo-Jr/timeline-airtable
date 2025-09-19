@@ -68,3 +68,38 @@ export function generateScaleMarkers(minDate, totalDays, interval) {
   
   return markers;
 }
+
+/**
+ * Converts a percentage position to a date
+ * @param {number} percentage - Position percentage (0-100)
+ * @param {Date} minDate - Minimum date in the timeline
+ * @param {number} totalDays - Total days in the timeline
+ * @returns {Date} Corresponding date
+ */
+export function percentageToDate(percentage, minDate, totalDays) {
+  const days = Math.round((percentage / 100) * totalDays);
+  const date = new Date(minDate);
+  date.setDate(date.getDate() + days);
+  return date;
+}
+
+/**
+ * Converts a date to percentage position
+ * @param {Date} date - Date to convert
+ * @param {Date} minDate - Minimum date in the timeline
+ * @param {number} totalDays - Total days in the timeline
+ * @returns {number} Position percentage (0-100)
+ */
+export function dateToPercentage(date, minDate, totalDays) {
+  const days = getDaysDifference(minDate, date);
+  return (days / totalDays) * 100;
+}
+
+/**
+ * Formats a date to YYYY-MM-DD string
+ * @param {Date} date - Date to format
+ * @returns {string} Formatted date string
+ */
+export function formatDateString(date) {
+  return date.toISOString().split('T')[0];
+}

@@ -23,18 +23,22 @@ export default function TimelineStats({ lanes, items, minDate, maxDate }) {
         <strong style={{ color: '#1F2937' }}>{items.length}</strong> itens
       </div>
       <div>
-        Período: <strong style={{ color: '#1F2937' }}>
+        Period: <strong style={{ color: '#1F2937' }}>
           {formatDate(minDate.toISOString().split('T')[0])}
-        </strong> até <strong style={{ color: '#1F2937' }}>
+        </strong> to <strong style={{ color: '#1F2937' }}>
           {formatDate(maxDate.toISOString().split('T')[0])}
         </strong>
       </div>
       <div style={{ 
         fontSize: '12px', 
         color: '#9CA3AF',
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4px'
       }}>
-        💡 Duplo clique nos itens para editar
+        <div>💡 Double-click on items to edit them</div>
+        <div>🖱️ Drag the edges to resize, the middle to move</div>
       </div>
     </div>
   );
